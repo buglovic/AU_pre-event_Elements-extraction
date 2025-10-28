@@ -307,7 +307,7 @@ pre_event_data/
 - Sorted by: Last capture date (newest = highest number)
 
 **Arturo Structure Details:**
-- Location: `/Users/romanbuegler/dev/hail_damage/data/final/arturo_structuredetails_{STATE}_full.gpkg`
+- Location: `data/arturo_structuredetails_{STATE}_full.gpkg` (download from AWS S3)
 - Layer: `structures`
 - Coverage:
   - NSW: 3.3M structures (6.1 GB)
@@ -316,7 +316,7 @@ pre_event_data/
   - WA, SA, ACT, TAS, NT: 1.9M structures total
 
 **Arturo Property Details:**
-- Location: `/Users/romanbuegler/dev/hail_damage/data/final/arturo_{STATE}_property_details.gpkg`
+- Location: `data/arturo_propertydetails_{STATE}_full.gpkg` (download from AWS S3)
 - Layer: `parcels`
 - Columns: 63 (property boundaries + feature detection)
 - Features: pools, decks, trampolines, enclosures, sport courts
@@ -405,7 +405,8 @@ pip install git+https://github.com/DPIRD-DMA/Building-Regulariser.git
 ```bash
 cd scripts
 cp config.example.py config.py
-# Edit config.py and set ARTURO_DATA_DIR to your local data path
+# (Optional) Edit config.py if you need to change the data path
+# Default is ../data which points to the data/ directory in the repository
 ```
 
 See [Quick Start](#quick-start) section for detailed setup instructions.
@@ -472,13 +473,14 @@ STATE_BOUNDS = {
 ### "config.py not found"
 - **Error:** `config.py not found! Please create it from config.example.py`
 - **Solution:** Copy the template: `cp config.example.py config.py`
-- **Then:** Edit `config.py` and set `ARTURO_DATA_DIR` to your data path
+- **Note:** The default configuration uses `../data` which should work if you've placed Arturo data in the `data/` directory
 
 ### "ARTURO_DATA_DIR does not exist"
 - **Error:** Configuration validation fails with path error
-- **Solution:** Edit `config.py` and update `ARTURO_DATA_DIR` to point to your local Arturo data
+- **Solution:** The default `ARTURO_DATA_DIR` is `../data` (relative to scripts/ directory)
+- **Fix:** Make sure you've downloaded Arturo data files to the `data/` directory in the repository root
 - **Verify:** Run `python config.py` to validate configuration
-- **Alternative:** Set environment variable: `export ARTURO_DATA_DIR=/path/to/data`
+- **Alternative:** Edit `config.py` to point to a different location, or set environment variable: `export ARTURO_DATA_DIR=/path/to/data`
 
 ### "No Arturo state GeoPackage files found"
 - **Error:** No `arturo_structuredetails_*_full.gpkg` files found in data directory
