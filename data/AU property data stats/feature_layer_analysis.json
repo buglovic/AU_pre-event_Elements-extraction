@@ -1,0 +1,2634 @@
+{
+  "NSW": {
+    "layers": {
+      "parcels": 2061017,
+      "pools": 307870,
+      "trampolines": 146768,
+      "sports_pitches": 8514,
+      "solar_panels_ground": 1299326,
+      "wooden_decks": 82029,
+      "driveways": 2683060,
+      "vehicles": 1533413
+    },
+    "feature_details": {
+      "driveways": {
+        "feature_count": 2683060,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r65udq1krtjm2twfb5vm",
+              "au_r3gqbf1djcxg6hwggw64",
+              "au_r3gx9jjeeby9gfyhz8v3"
+            ],
+            "unique_count": 1731738
+          },
+          "feature_area": {
+            "sample_values": [
+              343.80753479867695,
+              51.088026829797,
+              18.49955858872272
+            ],
+            "unique_count": 2606910
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "pools": {
+        "feature_count": 307870,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r3gx981twk3vd0gt787q",
+              "au_r638wu3f5utr1ujnq0gw",
+              "au_r65036f8efzutcw2bxqm"
+            ],
+            "unique_count": 300601
+          },
+          "feature_area": {
+            "sample_values": [
+              46.07743518459871,
+              37.83081351357284,
+              22.16205275668341
+            ],
+            "unique_count": 299015
+          },
+          "feature_type": {
+            "sample_values": [
+              "IN_GROUND",
+              "IN_GROUND",
+              "IN_GROUND"
+            ],
+            "unique_count": 2
+          }
+        }
+      },
+      "solar_panels_ground": {
+        "feature_count": 1299326,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r638kv9v95tqt1kjbb64",
+              "au_r64bm9r22252ht0qn2ks",
+              "au_r64bpvjh6p4qpp3zwk7t"
+            ],
+            "unique_count": 618251
+          },
+          "feature_area": {
+            "sample_values": [
+              30.521150430262185,
+              9.132256655518557,
+              8.516932829635943
+            ],
+            "unique_count": 1269193
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "sports_pitches": {
+        "feature_count": 8514,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r65v8z39spb94z1rt0fx",
+              "au_r3gx90mkhbpcg7y8ms9v",
+              "au_r6hnnmn2u93xfg0hpe5q"
+            ],
+            "unique_count": 7948
+          },
+          "feature_area": {
+            "sample_values": [
+              223.37789886612248,
+              489.3218774327549,
+              179.25450842393187
+            ],
+            "unique_count": 8087
+          },
+          "feature_type": {
+            "sample_values": [
+              null,
+              "TENNIS_COURT",
+              null
+            ],
+            "unique_count": 3
+          }
+        }
+      },
+      "trampolines": {
+        "feature_count": 146768,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r650p904s64g5g2xkn69",
+              "au_r650n2dtnu67385n6v3q",
+              "au_r650pkewcv76hs9k0ub9"
+            ],
+            "unique_count": 143461
+          },
+          "feature_area": {
+            "sample_values": [
+              7.2371626190718,
+              6.959744718098222,
+              11.526654606152205
+            ],
+            "unique_count": 143376
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "vehicles": {
+        "feature_count": 1533413,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r3gqbf1djcxg6hwggw64",
+              "au_r6464un2szrn7q2rxs89",
+              "au_r6464un2szrn7q2rxs89"
+            ],
+            "unique_count": 755347
+          },
+          "feature_area": {
+            "sample_values": [
+              7.993133588435496,
+              11.550497554848189,
+              9.454172629995607
+            ],
+            "unique_count": 1481520
+          },
+          "feature_type": {
+            "sample_values": [
+              "ON_DRIVEWAY",
+              "ON_DRIVEWAY",
+              "ON_DRIVEWAY"
+            ],
+            "unique_count": 3
+          }
+        }
+      },
+      "wooden_decks": {
+        "feature_count": 82029,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r6525pz77v1dwxscw7c1",
+              "au_r6580nb71m741x3mz0gm",
+              "au_r65uehtevbvyhqey7xw1"
+            ],
+            "unique_count": 73697
+          },
+          "feature_area": {
+            "sample_values": [
+              20.051718343254247,
+              113.12689277554126,
+              41.2479956140247
+            ],
+            "unique_count": 78113
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      }
+    }
+  },
+  "QLD": {
+    "layers": {
+      "parcels": 1703881,
+      "pools": 299267,
+      "trampolines": 109316,
+      "sports_pitches": 6055,
+      "solar_panels_ground": 1324660,
+      "wooden_decks": 36191,
+      "driveways": 1828035,
+      "vehicles": 1080447
+    },
+    "feature_details": {
+      "driveways": {
+        "feature_count": 1828035,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r7hud7wbrv08dv3enqxf",
+              "au_r7hftp4qwgz6vvv6s3wu",
+              "au_rk4pdyevy45kcmfdxt3m"
+            ],
+            "unique_count": 1312869
+          },
+          "feature_area": {
+            "sample_values": [
+              40.911157834977786,
+              129.17078549434123,
+              20.907446858782052
+            ],
+            "unique_count": 1790745
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "pools": {
+        "feature_count": 299267,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r7hud7wbrv08dv3enqxf",
+              "au_r7hequmuv81mjttk1r10",
+              "au_r7ffxd0qn2fpt7vmr1zm"
+            ],
+            "unique_count": 297417
+          },
+          "feature_area": {
+            "sample_values": [
+              14.241293939560082,
+              31.849228648102272,
+              20.962931570501265
+            ],
+            "unique_count": 294102
+          },
+          "feature_type": {
+            "sample_values": [
+              "ABOVE_GROUND",
+              "IN_GROUND",
+              "IN_GROUND"
+            ],
+            "unique_count": 2
+          }
+        }
+      },
+      "solar_panels_ground": {
+        "feature_count": 1324660,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r7hud7wbrv08dv3enqxf",
+              "au_r7hgg4mcxzsc3dsn0nm3",
+              "au_r7hgg4mcxzsc3dsn0nm3"
+            ],
+            "unique_count": 667441
+          },
+          "feature_area": {
+            "sample_values": [
+              12.409880864967787,
+              11.304950453390507,
+              11.262257704664895
+            ],
+            "unique_count": 1296906
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "sports_pitches": {
+        "feature_count": 6055,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r7h53h2dxwzxbc8v9g21",
+              "au_r7h4fnp4vtb2csxbycyf",
+              "au_r7hv808brnjsbydku960"
+            ],
+            "unique_count": 5880
+          },
+          "feature_area": {
+            "sample_values": [
+              171.83807232169318,
+              563.4538327736582,
+              36.17193971564017
+            ],
+            "unique_count": 5867
+          },
+          "feature_type": {
+            "sample_values": [
+              null,
+              "TENNIS_COURT",
+              null
+            ],
+            "unique_count": 3
+          }
+        }
+      },
+      "trampolines": {
+        "feature_count": 109316,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r7h513sfumw21qrnefvg",
+              "au_r7h51n83q24dypur8pv5",
+              "au_r7h5601tx9vwcqd7tddw"
+            ],
+            "unique_count": 107888
+          },
+          "feature_area": {
+            "sample_values": [
+              5.522211468398172,
+              7.432241997563978,
+              7.295943408661376
+            ],
+            "unique_count": 107746
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "vehicles": {
+        "feature_count": 1080447,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r7hud7wbrv08dv3enqxf",
+              "au_r7hud7wbrv08dv3enqxf",
+              "au_rk4pdyevy45kcmfdxt3m"
+            ],
+            "unique_count": 493714
+          },
+          "feature_area": {
+            "sample_values": [
+              7.732096608122481,
+              6.410510025626316,
+              9.049337511028664
+            ],
+            "unique_count": 1057171
+          },
+          "feature_type": {
+            "sample_values": [
+              "NOT_ON_DRIVEWAY",
+              "ON_DRIVEWAY",
+              "NOT_ON_DRIVEWAY"
+            ],
+            "unique_count": 2
+          }
+        }
+      },
+      "wooden_decks": {
+        "feature_count": 36191,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r7j05n02y06wkv2r958q",
+              "au_r7g838r7y58ubk3szwb6",
+              "au_r7h532kscmysytc7yhs8"
+            ],
+            "unique_count": 34225
+          },
+          "feature_area": {
+            "sample_values": [
+              11.187755999655709,
+              83.29230323328571,
+              12.021657393827615
+            ],
+            "unique_count": 35341
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      }
+    }
+  },
+  "VIC": {
+    "layers": {
+      "parcels": 1657223,
+      "pools": 95242,
+      "trampolines": 93865,
+      "sports_pitches": 10152,
+      "solar_panels_ground": 842269,
+      "wooden_decks": 63229,
+      "driveways": 2221298,
+      "vehicles": 970761
+    },
+    "feature_details": {
+      "driveways": {
+        "feature_count": 2221298,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r1q6916nkgnndyteq0vf",
+              "au_r1qb7fcn6pu1h77p0z55",
+              "au_r1qb7fcn6pu1h77p0z55"
+            ],
+            "unique_count": 1356809
+          },
+          "feature_area": {
+            "sample_values": [
+              2.31853052426332,
+              20.37717667965739,
+              2.198845604690114
+            ],
+            "unique_count": 2160039
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "pools": {
+        "feature_count": 95242,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r1qwgemcdsw0nhu8k8yb",
+              "au_r1nwee7de6r0cjfduz79",
+              "au_r1r2frw3f2jjghxvqtnf"
+            ],
+            "unique_count": 93041
+          },
+          "feature_area": {
+            "sample_values": [
+              20.39629087958143,
+              33.697994309363274,
+              35.34430961678261
+            ],
+            "unique_count": 93101
+          },
+          "feature_type": {
+            "sample_values": [
+              "IN_GROUND",
+              "IN_GROUND",
+              "IN_GROUND"
+            ],
+            "unique_count": 2
+          }
+        }
+      },
+      "solar_panels_ground": {
+        "feature_count": 842269,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r1qb7fcn6pu1h77p0z55",
+              "au_r1ppw9qx7rx1fpuxtk6f",
+              "au_r1prdzjqdhd7v2d21z0e"
+            ],
+            "unique_count": 413459
+          },
+          "feature_area": {
+            "sample_values": [
+              6.3852761776985805,
+              12.468934856086818,
+              12.677293640087973
+            ],
+            "unique_count": 820638
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "sports_pitches": {
+        "feature_count": 10152,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r1r179jbdhwp9jqff1eg",
+              "au_r1qcrde90ev2rdgb26d8",
+              "au_r1qbv1b202mdkjgpu6b5"
+            ],
+            "unique_count": 9675
+          },
+          "feature_area": {
+            "sample_values": [
+              1544.297372518714,
+              44.91637665650451,
+              136.04272827784283
+            ],
+            "unique_count": 9741
+          },
+          "feature_type": {
+            "sample_values": [
+              "TENNIS_COURT",
+              null,
+              null
+            ],
+            "unique_count": 3
+          }
+        }
+      },
+      "trampolines": {
+        "feature_count": 93865,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r1r1c5u5k31d0f74ms26",
+              "au_r1r2frw3f2jjghxvqtnf",
+              "au_r1qbshf158h56tj0m36t"
+            ],
+            "unique_count": 92397
+          },
+          "feature_area": {
+            "sample_values": [
+              13.205631115020616,
+              10.130053590413286,
+              6.194408933159115
+            ],
+            "unique_count": 92321
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "vehicles": {
+        "feature_count": 970761,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r1ppqugr6tbcwwzq5v8n",
+              "au_r1ppqugr6tbcwwzq5v8n",
+              "au_r1ppqugr6tbcwwzq5v8n"
+            ],
+            "unique_count": 511953
+          },
+          "feature_area": {
+            "sample_values": [
+              10.450488754812111,
+              10.596590326059498,
+              7.78673709536939
+            ],
+            "unique_count": 932286
+          },
+          "feature_type": {
+            "sample_values": [
+              "ON_DRIVEWAY",
+              "NOT_ON_DRIVEWAY",
+              "ON_DRIVEWAY"
+            ],
+            "unique_count": 3
+          }
+        }
+      },
+      "wooden_decks": {
+        "feature_count": 63229,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r1prc4643mqcsjtbtc55",
+              "au_r1r07yfv5kek2dux1u8g",
+              "au_r1r0rsf361b4d97371c1"
+            ],
+            "unique_count": 60300
+          },
+          "feature_area": {
+            "sample_values": [
+              29.168001811121897,
+              43.89141150010135,
+              105.42080581009628
+            ],
+            "unique_count": 61427
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      }
+    }
+  },
+  "WA": {
+    "layers": {
+      "parcels": 837520,
+      "pools": 138942,
+      "trampolines": 54885,
+      "sports_pitches": 2834,
+      "solar_panels_ground": 794029,
+      "wooden_decks": 18235,
+      "driveways": 1126659,
+      "vehicles": 618094
+    },
+    "feature_details": {
+      "driveways": {
+        "feature_count": 1126659,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_qd44rs9hhx9hjj2w4r2w",
+              "au_qd44rs9hhx9hjj2w4r2w",
+              "au_qd44rs9hhx9hjj2w4r2w"
+            ],
+            "unique_count": 728802
+          },
+          "feature_area": {
+            "sample_values": [
+              5.327380109598732,
+              0.6964262349383771,
+              28.980439903208005
+            ],
+            "unique_count": 1047666
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "pools": {
+        "feature_count": 138942,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_qd4nxg6cc3n7wd1sekm9",
+              "au_qd6d8kf09k74y56u763f",
+              "au_qd6dvs0gz222g8zjh34u"
+            ],
+            "unique_count": 138033
+          },
+          "feature_area": {
+            "sample_values": [
+              37.98099185979814,
+              28.012791780081137,
+              26.00436561753652
+            ],
+            "unique_count": 134344
+          },
+          "feature_type": {
+            "sample_values": [
+              "IN_GROUND",
+              "IN_GROUND",
+              "IN_GROUND"
+            ],
+            "unique_count": 2
+          }
+        }
+      },
+      "solar_panels_ground": {
+        "feature_count": 794029,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_qd4nx27vfv6dshj1fpn2",
+              "au_qd4nx27vfv6dshj1fpn2",
+              "au_qd44rs9pbujdmvemqeqk"
+            ],
+            "unique_count": 367838
+          },
+          "feature_area": {
+            "sample_values": [
+              11.477307515579014,
+              18.053603799526517,
+              10.430534392116623
+            ],
+            "unique_count": 747390
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "sports_pitches": {
+        "feature_count": 2834,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_qd63wqd8bgqz4y1hct4h",
+              "au_qd63wqd8bgqz4y1hct4h",
+              "au_qd6d3ye47cje6eyyv8dp"
+            ],
+            "unique_count": 2709
+          },
+          "feature_area": {
+            "sample_values": [
+              331.13255307371804,
+              3951.732903021188,
+              314.1305502013504
+            ],
+            "unique_count": 2651
+          },
+          "feature_type": {
+            "sample_values": [
+              null,
+              null,
+              "TENNIS_COURT"
+            ],
+            "unique_count": 3
+          }
+        }
+      },
+      "trampolines": {
+        "feature_count": 54885,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_qd67by46hcky2z89fqtk",
+              "au_qd67dch6emw201edjdh3",
+              "au_qd63h20qrd7jjtgqcnfr"
+            ],
+            "unique_count": 54286
+          },
+          "feature_area": {
+            "sample_values": [
+              12.72534091007115,
+              7.87276315228025,
+              3.894094124504158
+            ],
+            "unique_count": 52456
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "vehicles": {
+        "feature_count": 618094,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_qd44rs9hhx9hjj2w4r2w",
+              "au_qd4nx27vfv6dshj1fpn2",
+              "au_qd44rgxt5vt998e51my4"
+            ],
+            "unique_count": 306370
+          },
+          "feature_area": {
+            "sample_values": [
+              7.571242751845765,
+              7.887380192168698,
+              6.9646480572121865
+            ],
+            "unique_count": 579003
+          },
+          "feature_type": {
+            "sample_values": [
+              "ON_DRIVEWAY",
+              "ON_DRIVEWAY",
+              "NOT_ON_DRIVEWAY"
+            ],
+            "unique_count": 3
+          }
+        }
+      },
+      "wooden_decks": {
+        "feature_count": 18235,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_qd6dvs0gz222g8zjh34u",
+              "au_qd66sbxsj58xbh7bnxe8",
+              "au_qd67b9rkzbzcs68b4dxz"
+            ],
+            "unique_count": 17416
+          },
+          "feature_area": {
+            "sample_values": [
+              12.739004314695991,
+              10.986845015157638,
+              26.3897113381716
+            ],
+            "unique_count": 17020
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      }
+    }
+  },
+  "SA": {
+    "layers": {
+      "parcels": 648073,
+      "pools": 43264,
+      "trampolines": 37033,
+      "sports_pitches": 2953,
+      "solar_panels_ground": 531719,
+      "wooden_decks": 9713,
+      "driveways": 809542,
+      "vehicles": 405645
+    },
+    "feature_details": {
+      "driveways": {
+        "feature_count": 809542,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r41u1jsg4s8ju2hf4jry",
+              "au_r41u1tpr2s7segv4zr31",
+              "au_r41znzd43ys126n8c7hh"
+            ],
+            "unique_count": 516471
+          },
+          "feature_area": {
+            "sample_values": [
+              1.0111579069772554,
+              21.384939482492555,
+              40.725572563430546
+            ],
+            "unique_count": 804491
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "pools": {
+        "feature_count": 43264,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r1f91bms8tnvmsenqccj",
+              "au_r1f3rc0tyu220d1gk5h1",
+              "au_r1fd44nwhgqf74ugnmzt"
+            ],
+            "unique_count": 42773
+          },
+          "feature_area": {
+            "sample_values": [
+              30.344986486587953,
+              34.624723220523556,
+              35.12330195702345
+            ],
+            "unique_count": 43144
+          },
+          "feature_type": {
+            "sample_values": [
+              "IN_GROUND",
+              "IN_GROUND",
+              "IN_GROUND"
+            ],
+            "unique_count": 2
+          }
+        }
+      },
+      "solar_panels_ground": {
+        "feature_count": 531719,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r41u1jsg4s8ju2hf4jry",
+              "au_r1f2zy7b3brnzcczg8mk",
+              "au_r1f2zy7b3brnzcczg8mk"
+            ],
+            "unique_count": 257236
+          },
+          "feature_area": {
+            "sample_values": [
+              9.647713278939202,
+              13.523251794403324,
+              1.4339000443207748
+            ],
+            "unique_count": 529187
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "sports_pitches": {
+        "feature_count": 2953,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r1f3rqm4ggg6x7jt6yp2",
+              "au_r1f9449vnfv0m3vjx4sd",
+              "au_r1f99t7y40djqxck21th"
+            ],
+            "unique_count": 2838
+          },
+          "feature_area": {
+            "sample_values": [
+              31.089559444981113,
+              31.367107420512585,
+              48.31085264386799
+            ],
+            "unique_count": 2941
+          },
+          "feature_type": {
+            "sample_values": [
+              null,
+              "TENNIS_COURT",
+              null
+            ],
+            "unique_count": 3
+          }
+        }
+      },
+      "trampolines": {
+        "feature_count": 37033,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r1f82yrpzbbbvsc4mp6y",
+              "au_r1f979nd84kkqrgtupc6",
+              "au_r1fd5znd04recnuuxxdm"
+            ],
+            "unique_count": 36461
+          },
+          "feature_area": {
+            "sample_values": [
+              8.639566140166052,
+              11.847564476966612,
+              13.475946242590394
+            ],
+            "unique_count": 36932
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "vehicles": {
+        "feature_count": 405645,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r41u1jsg4s8ju2hf4jry",
+              "au_r41u1jsg4s8ju2hf4jry",
+              "au_r41u1jsg4s8ju2hf4jry"
+            ],
+            "unique_count": 221757
+          },
+          "feature_area": {
+            "sample_values": [
+              8.663085249818469,
+              8.839254705912582,
+              7.885896549643876
+            ],
+            "unique_count": 403051
+          },
+          "feature_type": {
+            "sample_values": [
+              "NOT_ON_DRIVEWAY",
+              "NOT_ON_DRIVEWAY",
+              "NOT_ON_DRIVEWAY"
+            ],
+            "unique_count": 2
+          }
+        }
+      },
+      "wooden_decks": {
+        "feature_count": 9713,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r1f80qeceh7r232tmq30",
+              "au_r1f3xdyb05rjgn4vzg7k",
+              "au_r1f82r5bkn8ukvee11dw"
+            ],
+            "unique_count": 9396
+          },
+          "feature_area": {
+            "sample_values": [
+              28.602012661222812,
+              23.72448910207031,
+              16.941046279452575
+            ],
+            "unique_count": 9668
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      }
+    }
+  },
+  "TAS": {
+    "layers": {
+      "parcels": 164056,
+      "pools": 3503,
+      "trampolines": 14958,
+      "sports_pitches": 630,
+      "solar_panels_ground": 69520,
+      "wooden_decks": 16377,
+      "driveways": 240991,
+      "vehicles": 149362
+    },
+    "feature_details": {
+      "driveways": {
+        "feature_count": 240991,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r22gbkzq31m4fc8yg5g2",
+              "au_r22gbkzq31m4fc8yg5g2",
+              "au_r22gbptr3q8y171zrjtt"
+            ],
+            "unique_count": 138461
+          },
+          "feature_area": {
+            "sample_values": [
+              66.0333379076234,
+              6.512735473790063,
+              2.3977911484026455
+            ],
+            "unique_count": 229727
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "pools": {
+        "feature_count": 3503,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r28sknk2kvyejvcxrk31",
+              "au_r22dzq1dyqdkj4v5gt3c",
+              "au_r28shx47tx38mqbhz0cq"
+            ],
+            "unique_count": 3465
+          },
+          "feature_area": {
+            "sample_values": [
+              3.134236114137688,
+              9.504315714197322,
+              27.4906803198808
+            ],
+            "unique_count": 3451
+          },
+          "feature_type": {
+            "sample_values": [
+              "ABOVE_GROUND",
+              "ABOVE_GROUND",
+              "IN_GROUND"
+            ],
+            "unique_count": 2
+          }
+        }
+      },
+      "solar_panels_ground": {
+        "feature_count": 69520,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r22gbkzq31m4fc8yg5g2",
+              "au_r22gbkzq31m4fc8yg5g2",
+              "au_r22g2m4tgu141nehsse6"
+            ],
+            "unique_count": 33699
+          },
+          "feature_area": {
+            "sample_values": [
+              22.363168283737565,
+              18.92757216982395,
+              12.424390595471657
+            ],
+            "unique_count": 67208
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "sports_pitches": {
+        "feature_count": 630,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r0xwry6sfe7fgsefw6tc",
+              "au_r22gbqfzq5zxmzwq34h9",
+              "au_r28s9zynhvwd471y6ezh"
+            ],
+            "unique_count": 596
+          },
+          "feature_area": {
+            "sample_values": [
+              370.08065299396657,
+              493.8669486366368,
+              532.433211109372
+            ],
+            "unique_count": 617
+          },
+          "feature_type": {
+            "sample_values": [
+              "TENNIS_COURT",
+              "TENNIS_COURT",
+              "TENNIS_COURT"
+            ],
+            "unique_count": 3
+          }
+        }
+      },
+      "trampolines": {
+        "feature_count": 14958,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r22g25nxgx568su8jheg",
+              "au_r28jdnrqb6qhrged5m44",
+              "au_r28sknk2kvyejvcxrk31"
+            ],
+            "unique_count": 14543
+          },
+          "feature_area": {
+            "sample_values": [
+              10.435631218895075,
+              5.297873041454511,
+              6.69960558809844
+            ],
+            "unique_count": 14760
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "vehicles": {
+        "feature_count": 149362,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r22u48p8dpdtt9ew7z3w",
+              "au_r22u4jx7sbydk6eqh7u5",
+              "au_r22sz1ds5ges1mr2yk67"
+            ],
+            "unique_count": 71260
+          },
+          "feature_area": {
+            "sample_values": [
+              8.319448560749715,
+              7.321057445204809,
+              6.0160535018802115
+            ],
+            "unique_count": 144799
+          },
+          "feature_type": {
+            "sample_values": [
+              "ON_DRIVEWAY",
+              "NOT_ON_DRIVEWAY",
+              "ON_DRIVEWAY"
+            ],
+            "unique_count": 2
+          }
+        }
+      },
+      "wooden_decks": {
+        "feature_count": 16377,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r22gbkzq31m4fc8yg5g2",
+              "au_r22u1s1wj2ghekuy6d29",
+              "au_r22g2668bquz5s10vfc3"
+            ],
+            "unique_count": 15434
+          },
+          "feature_area": {
+            "sample_values": [
+              15.328796088160352,
+              29.071842335666886,
+              9.679045903689213
+            ],
+            "unique_count": 15748
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      }
+    }
+  },
+  "ACT": {
+    "layers": {
+      "parcels": 149431,
+      "pools": 9852,
+      "trampolines": 13721,
+      "sports_pitches": 542,
+      "solar_panels_ground": 133672,
+      "wooden_decks": 9618,
+      "driveways": 209223,
+      "vehicles": 101979
+    },
+    "feature_details": {
+      "driveways": {
+        "feature_count": 209223,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r3dn3q203512qtxbbnev",
+              "au_r39zz0uzfh1jp4684bgx",
+              "au_r39zr6ye076126su9ktj"
+            ],
+            "unique_count": 132134
+          },
+          "feature_area": {
+            "sample_values": [
+              30.98139745111848,
+              26.4055824324559,
+              1.5535114428089494
+            ],
+            "unique_count": 202105
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "pools": {
+        "feature_count": 9852,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r39zz29x12fcm5fyd2z1",
+              "au_r3dp25g98kpp0jnkbjgx",
+              "au_r39yz7qv7w1e0jffb68k"
+            ],
+            "unique_count": 9740
+          },
+          "feature_area": {
+            "sample_values": [
+              33.22074817041003,
+              25.11127816332929,
+              37.20981517774242
+            ],
+            "unique_count": 9598
+          },
+          "feature_type": {
+            "sample_values": [
+              "IN_GROUND",
+              "IN_GROUND",
+              "IN_GROUND"
+            ],
+            "unique_count": 2
+          }
+        }
+      },
+      "solar_panels_ground": {
+        "feature_count": 133672,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r3dn3q203512qtxbbnev",
+              "au_r39zz0uzfh1jp4684bgx",
+              "au_r39zz0uzfh1jp4684bgx"
+            ],
+            "unique_count": 57127
+          },
+          "feature_area": {
+            "sample_values": [
+              24.772346602087215,
+              3.728458735871888,
+              16.783120625536817
+            ],
+            "unique_count": 129379
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "sports_pitches": {
+        "feature_count": 542,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r3dp3yftvvcghwuck34f",
+              "au_r3dp125mdynsj2v58uh9",
+              "au_r3dp6nn7yzzfhp8rmkvn"
+            ],
+            "unique_count": 521
+          },
+          "feature_area": {
+            "sample_values": [
+              2468.4773348180775,
+              546.1152523421691,
+              46.03183454559321
+            ],
+            "unique_count": 521
+          },
+          "feature_type": {
+            "sample_values": [
+              "TENNIS_COURT",
+              "TENNIS_COURT",
+              "BASKETBALL_COURT"
+            ],
+            "unique_count": 3
+          }
+        }
+      },
+      "trampolines": {
+        "feature_count": 13721,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r3dn3q203512qtxbbnev",
+              "au_r39zz0uzfh1jp4684bgx",
+              "au_r39zx1fjh97ckvuy1e91"
+            ],
+            "unique_count": 13499
+          },
+          "feature_area": {
+            "sample_values": [
+              7.229666751646213,
+              4.17304688358253,
+              7.362484191782645
+            ],
+            "unique_count": 13370
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "vehicles": {
+        "feature_count": 101979,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r3dn3q203512qtxbbnev",
+              "au_r3dn3q203512qtxbbnev",
+              "au_r3dp80h2khfteds6y4gu"
+            ],
+            "unique_count": 55196
+          },
+          "feature_area": {
+            "sample_values": [
+              7.919027949428469,
+              7.616771044950104,
+              7.937450874644167
+            ],
+            "unique_count": 97663
+          },
+          "feature_type": {
+            "sample_values": [
+              "ON_DRIVEWAY",
+              "ON_DRIVEWAY",
+              "ON_DRIVEWAY"
+            ],
+            "unique_count": 2
+          }
+        }
+      },
+      "wooden_decks": {
+        "feature_count": 9618,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_r39zz0rbetvsj6cz9qf7",
+              "au_r3dp25g98kpp0jnkbjgx",
+              "au_r39yz7qv7w1e0jffb68k"
+            ],
+            "unique_count": 9086
+          },
+          "feature_area": {
+            "sample_values": [
+              22.485958352779686,
+              49.534559224669856,
+              25.453076370684673
+            ],
+            "unique_count": 9316
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      }
+    }
+  },
+  "NT": {
+    "layers": {
+      "parcels": 37786,
+      "pools": 8282,
+      "trampolines": 2267,
+      "sports_pitches": 119,
+      "solar_panels_ground": 32097,
+      "wooden_decks": 415,
+      "driveways": 42013,
+      "vehicles": 40177
+    },
+    "feature_details": {
+      "driveways": {
+        "feature_count": 42013,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_qvv1d4xzs60747qh92z8",
+              "au_qvv1d4xzs60747qh92z8",
+              "au_qvv0uedxep8bhfudt8ds"
+            ],
+            "unique_count": 29692
+          },
+          "feature_area": {
+            "sample_values": [
+              0.36701192519403353,
+              53.72463427559994,
+              19.629729775185464
+            ],
+            "unique_count": 41827
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "pools": {
+        "feature_count": 8282,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_qvv0t8t0w3c2tgfnek1b",
+              "au_qvv0ukmv0257t02ccgfy",
+              "au_qvv13ee98zwyvtjf0093"
+            ],
+            "unique_count": 8215
+          },
+          "feature_area": {
+            "sample_values": [
+              16.127331385988978,
+              23.514563883924176,
+              29.13324003635387
+            ],
+            "unique_count": 8262
+          },
+          "feature_type": {
+            "sample_values": [
+              "IN_GROUND",
+              "IN_GROUND",
+              "IN_GROUND"
+            ],
+            "unique_count": 2
+          }
+        }
+      },
+      "solar_panels_ground": {
+        "feature_count": 32097,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_qvv1d4xzs60747qh92z8",
+              "au_qvv22b9y2bh8sxk82h37",
+              "au_qvv22b9y2bh8sxk82h37"
+            ],
+            "unique_count": 13610
+          },
+          "feature_area": {
+            "sample_values": [
+              37.64478113439301,
+              15.35818170773392,
+              18.53926177904357
+            ],
+            "unique_count": 31922
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "sports_pitches": {
+        "feature_count": 119,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_qvv0thnyg5ght9dspb9r",
+              "au_qvv16z98wcs5z8pqw18p",
+              "au_qvv170puuzghz9jcpx0k"
+            ],
+            "unique_count": 109
+          },
+          "feature_area": {
+            "sample_values": [
+              65.65039556554595,
+              77.7792903791649,
+              126.28555225454365
+            ],
+            "unique_count": 119
+          },
+          "feature_type": {
+            "sample_values": [
+              "BASKETBALL_COURT",
+              null,
+              "TENNIS_COURT"
+            ],
+            "unique_count": 3
+          }
+        }
+      },
+      "trampolines": {
+        "feature_count": 2267,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_qvv0yqc25zrw6c1b3mu5",
+              "au_qvv0v8vx2p0mxpctdyxx",
+              "au_qvv0vgxfp4r419vybx7m"
+            ],
+            "unique_count": 2250
+          },
+          "feature_area": {
+            "sample_values": [
+              14.11799529165945,
+              13.851224098942684,
+              7.0674423907813
+            ],
+            "unique_count": 2266
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      },
+      "vehicles": {
+        "feature_count": 40177,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_qvv0t8t0w3c2tgfnek1b",
+              "au_qvv1d4xzs60747qh92z8",
+              "au_qvv1d4xzs60747qh92z8"
+            ],
+            "unique_count": 13025
+          },
+          "feature_area": {
+            "sample_values": [
+              10.489080037923337,
+              8.236710924768685,
+              6.576133402348498
+            ],
+            "unique_count": 39959
+          },
+          "feature_type": {
+            "sample_values": [
+              "NOT_ON_DRIVEWAY",
+              "NOT_ON_DRIVEWAY",
+              "NOT_ON_DRIVEWAY"
+            ],
+            "unique_count": 2
+          }
+        }
+      },
+      "wooden_decks": {
+        "feature_count": 415,
+        "columns": [
+          "parcel_id",
+          "feature_area",
+          "feature_type",
+          "vexcel_collection_name",
+          "vexcel_first_capture_date",
+          "vexcel_last_capture_date",
+          "vexcel_capture_date_str",
+          "vexcel_layer",
+          "vexcel_product_type",
+          "vexcel_graysky_event",
+          "vexcel_date_diff_days",
+          "vexcel_match_method",
+          "geometry"
+        ],
+        "geometry_type": "Polygon",
+        "sample_attributes": {
+          "parcel_id": {
+            "sample_values": [
+              "au_qvv15r973xt9r62edd97",
+              "au_qvv11zbutpmkfw6x8p2q",
+              "au_qvv1323tprxmmnvqjh5u"
+            ],
+            "unique_count": 401
+          },
+          "feature_area": {
+            "sample_values": [
+              28.53761658705144,
+              113.85406499969696,
+              34.48420853545356
+            ],
+            "unique_count": 409
+          },
+          "feature_type": {
+            "sample_values": [
+              "",
+              "",
+              ""
+            ],
+            "unique_count": 1
+          }
+        }
+      }
+    }
+  }
+}

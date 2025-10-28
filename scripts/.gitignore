@@ -1,0 +1,10 @@
+# Ignore local configuration (contains user-specific paths)
+config.py
+
+# Keep the example template
+!config.example.py
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo

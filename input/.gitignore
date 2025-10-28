@@ -1,0 +1,11 @@
+# Ignore all large GeoPackage files except the AOI definitions
+*.gpkg
+*.gpkg-shm
+*.gpkg-wal
+
+# Keep only the Graysky AOI definitions file
+!graysky_suncorp_aois.gpkg
+
+# Keep this .gitignore and README if exists
+!.gitignore
+!README.md

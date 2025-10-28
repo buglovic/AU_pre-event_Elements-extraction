@@ -1,0 +1,8 @@
+# Ignore all GeoPackage files (Arturo data is too large for GitHub)
+*.gpkg
+*.gpkg-shm
+*.gpkg-wal
+
+# Keep this README and .gitignore
+!README.md
+!.gitignore

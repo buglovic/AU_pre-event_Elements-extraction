@@ -1,0 +1,7 @@
+# Ignore all output files (too large for GitHub)
+*
+
+# Keep this .gitignore and README if exists
+!.gitignore
+!README.md
+!.gitkeep

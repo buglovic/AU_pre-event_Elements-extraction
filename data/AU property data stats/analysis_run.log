@@ -1,0 +1,348 @@
+/Users/romanbuegler/dev/hail_damage/scripts/analysis/analyze_all_property_details.py:339: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  bp = ax.boxplot(area_data, labels=labels, patch_artist=True)
+============================================================
+Arturo Property Details - Comprehensive Analysis
+============================================================
+Data directory: /Users/romanbuegler/dev/hail_damage/data/final
+Output directory: /Users/romanbuegler/dev/hail_damage/output/analysis
+
+============================================================
+Analyzing New South Wales (NSW)
+============================================================
+📁 File size: 10.77 GB
+📖 Reading parcels layer...
+   Loaded: 2,061,017 parcels
+
+📊 Basic Statistics:
+   Total parcels: 2,061,017
+   Mean parcel area: 1440.7 m²
+   Median parcel area: 639.7 m²
+   Mean impervious surface: 6.5%
+   Mean ground slope: 3.76°
+   Steep slopes: 2,044,656 (99.2%)
+
+🛰️  Vexcel Matching:
+   Matched parcels: 2,061,017 (100.0%)
+   - 30day: 2,059,520 (99.9%)
+   - : 1,496 (0.1%)
+   - 60day: 1 (0.0%)
+   Date difference (mean): -18.3 days
+   Date difference (median): -3.0 days
+
+🏠 Property Features:
+   Sheds               :        0 (  0.0%)
+   Garages             :        0 (  0.0%)
+   Enclosures          : 1,945,194 ( 94.4%)
+   ADUs                :        0 (  0.0%)
+   Pools               :        0 (  0.0%)
+   Trampolines         :        0 (  0.0%)
+   Sport Pitches       :        0 (  0.0%)
+   Tennis Courts       :        0 (  0.0%)
+   Basketball Courts   :        0 (  0.0%)
+   Ground Solar        :        0 (  0.0%)
+   Wooden Decks        :        0 (  0.0%)
+   Driveways           :        0 (  0.0%)
+   Vehicles            :        0 (  0.0%)
+
+📦 Unique Vexcel collections: 65
+
+============================================================
+Analyzing Queensland (QLD)
+============================================================
+📁 File size: 8.68 GB
+📖 Reading parcels layer...
+   Loaded: 1,703,881 parcels
+
+📊 Basic Statistics:
+   Total parcels: 1,703,881
+   Mean parcel area: 1576.9 m²
+   Median parcel area: 636.9 m²
+   Mean impervious surface: 4.8%
+   Mean ground slope: 3.23°
+   Steep slopes: 1,703,741 (100.0%)
+
+🛰️  Vexcel Matching:
+   Matched parcels: 1,703,881 (100.0%)
+   - 30day: 1,702,783 (99.9%)
+   - : 802 (0.0%)
+   - 60day: 296 (0.0%)
+   Date difference (mean): -15.7 days
+   Date difference (median): -7.0 days
+
+🏠 Property Features:
+   Sheds               :        0 (  0.0%)
+   Garages             :        0 (  0.0%)
+   Enclosures          : 1,703,559 (100.0%)
+   ADUs                :        0 (  0.0%)
+   Pools               :        0 (  0.0%)
+   Trampolines         :        0 (  0.0%)
+   Sport Pitches       :        0 (  0.0%)
+   Tennis Courts       :        0 (  0.0%)
+   Basketball Courts   :        0 (  0.0%)
+   Ground Solar        :        0 (  0.0%)
+   Wooden Decks        :        0 (  0.0%)
+   Driveways           :        0 (  0.0%)
+   Vehicles            :        0 (  0.0%)
+
+📦 Unique Vexcel collections: 38
+
+============================================================
+Analyzing Victoria (VIC)
+============================================================
+📁 File size: 8.33 GB
+📖 Reading parcels layer...
+   Loaded: 1,657,223 parcels
+
+📊 Basic Statistics:
+   Total parcels: 1,657,223
+   Mean parcel area: 1024.9 m²
+   Median parcel area: 544.9 m²
+   Mean impervious surface: 7.5%
+   Mean ground slope: 2.17°
+   Steep slopes: 1,650,214 (99.6%)
+
+🛰️  Vexcel Matching:
+   Matched parcels: 1,657,223 (100.0%)
+   - 30day: 1,656,607 (100.0%)
+   - : 386 (0.0%)
+   - 60day: 230 (0.0%)
+   Date difference (mean): -19.4 days
+   Date difference (median): -8.0 days
+
+🏠 Property Features:
+   Sheds               :        0 (  0.0%)
+   Garages             :        0 (  0.0%)
+   Enclosures          : 1,655,370 ( 99.9%)
+   ADUs                :        0 (  0.0%)
+   Pools               :        0 (  0.0%)
+   Trampolines         :        0 (  0.0%)
+   Sport Pitches       :        0 (  0.0%)
+   Tennis Courts       :        0 (  0.0%)
+   Basketball Courts   :        0 (  0.0%)
+   Ground Solar        :        0 (  0.0%)
+   Wooden Decks        :        0 (  0.0%)
+   Driveways           :        0 (  0.0%)
+   Vehicles            :        0 (  0.0%)
+
+📦 Unique Vexcel collections: 32
+
+============================================================
+Analyzing Western Australia (WA)
+============================================================
+📁 File size: 4.40 GB
+📖 Reading parcels layer...
+   Loaded: 837,520 parcels
+
+📊 Basic Statistics:
+   Total parcels: 837,520
+   Mean parcel area: 1338.6 m²
+   Median parcel area: 682.6 m²
+   Mean impervious surface: 6.6%
+   Mean ground slope: 2.11°
+   Steep slopes: 837,454 (100.0%)
+
+🛰️  Vexcel Matching:
+   Matched parcels: 837,520 (100.0%)
+   - 30day: 837,517 (100.0%)
+   - : 3 (0.0%)
+   Date difference (mean): -3.5 days
+   Date difference (median): -2.0 days
+
+🏠 Property Features:
+   Sheds               :        0 (  0.0%)
+   Garages             :        0 (  0.0%)
+   Enclosures          :  837,507 (100.0%)
+   ADUs                :        0 (  0.0%)
+   Pools               :        0 (  0.0%)
+   Trampolines         :        0 (  0.0%)
+   Sport Pitches       :        0 (  0.0%)
+   Tennis Courts       :        0 (  0.0%)
+   Basketball Courts   :        0 (  0.0%)
+   Ground Solar        :        0 (  0.0%)
+   Wooden Decks        :        0 (  0.0%)
+   Driveways           :        0 (  0.0%)
+   Vehicles            :        0 (  0.0%)
+
+📦 Unique Vexcel collections: 17
+
+============================================================
+Analyzing South Australia (SA)
+============================================================
+📁 File size: 3.28 GB
+📖 Reading parcels layer...
+   Loaded: 648,073 parcels
+
+📊 Basic Statistics:
+   Total parcels: 648,073
+   Mean parcel area: 864.5 m²
+   Median parcel area: 600.4 m²
+   Mean impervious surface: 6.1%
+   Mean ground slope: 2.09°
+   Steep slopes: 647,700 (99.9%)
+
+🛰️  Vexcel Matching:
+   Matched parcels: 648,073 (100.0%)
+   - 30day: 647,922 (100.0%)
+   - : 151 (0.0%)
+   Date difference (mean): -1.9 days
+   Date difference (median): -2.0 days
+
+🏠 Property Features:
+   Sheds               :        0 (  0.0%)
+   Garages             :        0 (  0.0%)
+   Enclosures          :  648,067 (100.0%)
+   ADUs                :        0 (  0.0%)
+   Pools               :        0 (  0.0%)
+   Trampolines         :        0 (  0.0%)
+   Sport Pitches       :        0 (  0.0%)
+   Tennis Courts       :        0 (  0.0%)
+   Basketball Courts   :        0 (  0.0%)
+   Ground Solar        :        0 (  0.0%)
+   Wooden Decks        :        0 (  0.0%)
+   Driveways           :        0 (  0.0%)
+   Vehicles            :        0 (  0.0%)
+
+📦 Unique Vexcel collections: 18
+
+============================================================
+Analyzing Tasmania (TAS)
+============================================================
+📁 File size: 0.86 GB
+📖 Reading parcels layer...
+   Loaded: 164,056 parcels
+
+📊 Basic Statistics:
+   Total parcels: 164,056
+   Mean parcel area: 1559.3 m²
+   Median parcel area: 669.6 m²
+   Mean impervious surface: 8.3%
+   Mean ground slope: 5.30°
+   Steep slopes: 163,431 (99.6%)
+
+🛰️  Vexcel Matching:
+   Matched parcels: 164,056 (100.0%)
+   - 30day: 163,640 (99.7%)
+   - : 416 (0.3%)
+   Date difference (mean): -0.7 days
+   Date difference (median): -1.0 days
+
+🏠 Property Features:
+   Sheds               :        0 (  0.0%)
+   Garages             :        0 (  0.0%)
+   Enclosures          :  164,037 (100.0%)
+   ADUs                :        0 (  0.0%)
+   Pools               :        0 (  0.0%)
+   Trampolines         :        0 (  0.0%)
+   Sport Pitches       :        0 (  0.0%)
+   Tennis Courts       :        0 (  0.0%)
+   Basketball Courts   :        0 (  0.0%)
+   Ground Solar        :        0 (  0.0%)
+   Wooden Decks        :        0 (  0.0%)
+   Driveways           :        0 (  0.0%)
+   Vehicles            :        0 (  0.0%)
+
+📦 Unique Vexcel collections: 9
+
+============================================================
+Analyzing Australian Capital Territory (ACT)
+============================================================
+📁 File size: 0.79 GB
+📖 Reading parcels layer...
+   Loaded: 149,431 parcels
+
+📊 Basic Statistics:
+   Total parcels: 149,431
+   Mean parcel area: 1479.4 m²
+   Median parcel area: 719.9 m²
+   Mean impervious surface: 6.1%
+   Mean ground slope: 3.15°
+   Steep slopes: 148,716 (99.5%)
+
+🛰️  Vexcel Matching:
+   Matched parcels: 149,431 (100.0%)
+   - 30day: 149,412 (100.0%)
+   - : 19 (0.0%)
+   Date difference (mean): -3.0 days
+   Date difference (median): -3.0 days
+
+🏠 Property Features:
+   Sheds               :        0 (  0.0%)
+   Garages             :        0 (  0.0%)
+   Enclosures          :  149,419 (100.0%)
+   ADUs                :        0 (  0.0%)
+   Pools               :        0 (  0.0%)
+   Trampolines         :        0 (  0.0%)
+   Sport Pitches       :        0 (  0.0%)
+   Tennis Courts       :        0 (  0.0%)
+   Basketball Courts   :        0 (  0.0%)
+   Ground Solar        :        0 (  0.0%)
+   Wooden Decks        :        0 (  0.0%)
+   Driveways           :        0 (  0.0%)
+   Vehicles            :        0 (  0.0%)
+
+📦 Unique Vexcel collections: 3
+
+============================================================
+Analyzing Northern Territory (NT)
+============================================================
+📁 File size: 0.20 GB
+📖 Reading parcels layer...
+   Loaded: 37,786 parcels
+
+📊 Basic Statistics:
+   Total parcels: 37,786
+   Mean parcel area: 3390.5 m²
+   Median parcel area: 840.3 m²
+   Mean impervious surface: 5.4%
+   Mean ground slope: 1.92°
+   Steep slopes: 0 (0.0%)
+
+🛰️  Vexcel Matching:
+   Matched parcels: 37,786 (100.0%)
+   - 30day: 37,778 (100.0%)
+   - : 8 (0.0%)
+   Date difference (mean): -2.0 days
+   Date difference (median): -2.0 days
+
+🏠 Property Features:
+   Sheds               :        0 (  0.0%)
+   Garages             :        0 (  0.0%)
+   Enclosures          :        0 (  0.0%)
+   ADUs                :        0 (  0.0%)
+   Pools               :        0 (  0.0%)
+   Trampolines         :        0 (  0.0%)
+   Sport Pitches       :        0 (  0.0%)
+   Tennis Courts       :        0 (  0.0%)
+   Basketball Courts   :        0 (  0.0%)
+   Ground Solar        :        0 (  0.0%)
+   Wooden Decks        :        0 (  0.0%)
+   Driveways           :        0 (  0.0%)
+   Vehicles            :        0 (  0.0%)
+
+📦 Unique Vexcel collections: 2
+
+✅ Successfully analyzed 8 states
+
+============================================================
+Creating Visualizations
+============================================================
+✅ Saved: parcels_by_state.png
+✅ Saved: file_sizes.png
+✅ Saved: vexcel_match_rates.png
+✅ Saved: features_heatmap.png
+✅ Saved: area_distribution.png
+✅ Saved: top_features_comparison.png
+
+============================================================
+Generating Report
+============================================================
+Traceback (most recent call last):
+  File "/Users/romanbuegler/dev/hail_damage/scripts/analysis/analyze_all_property_details.py", line 582, in <module>
+    main()
+    ~~~~^^
+  File "/Users/romanbuegler/dev/hail_damage/scripts/analysis/analyze_all_property_details.py", line 567, in main
+    report = generate_report(all_stats)
+  File "/Users/romanbuegler/dev/hail_damage/scripts/analysis/analyze_all_property_details.py", line 442, in generate_report
+    report.append(f"  - 60-day matches: {int(row['vexcel_60day']):,}")
+                                         ~~~^^^^^^^^^^^^^^^^^^^^^
+ValueError: cannot convert float NaN to integer
