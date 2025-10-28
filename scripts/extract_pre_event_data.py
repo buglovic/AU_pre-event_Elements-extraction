@@ -35,6 +35,7 @@ import argparse
 import logging
 import sys
 import time
+import warnings
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -42,6 +43,10 @@ from typing import Dict, List, Optional, Tuple
 import geopandas as gpd
 import pandas as pd
 from shapely.geometry import box, Polygon
+
+# Suppress warnings
+warnings.filterwarnings('ignore', message='Regularized polygon has low IoU')
+warnings.filterwarnings('ignore', category=DeprecationWarning, module='extract_pre_event_data')
 
 # Configure logging BEFORE importing config (to avoid NameError)
 logging.basicConfig(
@@ -54,8 +59,10 @@ logger = logging.getLogger(__name__)
 try:
     from config import (
         ARTURO_DATA_DIR,
-        AOI_FILE,
+        KML_INPUT_DIR,
         OUTPUT_DIR,
+        VDP_USERNAME,
+        VDP_PASSWORD,
         ENABLE_REGULARIZATION,
         REGULARIZATION_PARAMS,
         ENABLE_MFD_DEDUPLICATION,
@@ -67,6 +74,19 @@ except ImportError:
     logger.error("config.py not found! Please create it from config.example.py")
     logger.error("See README.md for setup instructions")
     sys.exit(1)
+
+# Import Vexcel API client
+try:
+    import os
+    vexcel_skill_path = os.path.expanduser('~/.config/claude-code/skills/vexcel_ortho_skill')
+    sys.path.insert(0, vexcel_skill_path)
+    from vexcel_api import VexcelClient, VexcelAuthError, VexcelAPIError
+    VEXCEL_API_AVAILABLE = True
+    logger.info("Vexcel API client imported successfully")
+except ImportError as e:
+    logger.warning(f"Could not import VexcelClient: {e}")
+    logger.warning("API collections will not be available. Only local KML files will be used.")
+    VEXCEL_API_AVAILABLE = False
 
 # Import building regularization library
 try:
@@ -124,34 +144,212 @@ STATE_BOUNDS = {
 # HELPER FUNCTIONS - AOI MANAGEMENT
 # ============================================================================
 
-def load_aois() -> gpd.GeoDataFrame:
-    """Load Graysky AOIs from GeoPackage."""
-    logger.info("Loading Graysky AOIs...")
-    aois = gpd.read_file(AOI_FILE, layer='graysky_aois')
-    logger.info(f"Loaded {len(aois)} AOIs")
-    return aois
+def load_kml_aois() -> List[Dict]:
+    """
+    Load AOIs from KML files in the input directory.
+
+    Returns:
+        List of dicts with keys: 'name', 'source_type', 'source_path'
+    """
+    kml_aois = []
+
+    if not KML_INPUT_DIR.exists():
+        logger.warning(f"KML input directory does not exist: {KML_INPUT_DIR}")
+        return kml_aois
+
+    kml_files = list(KML_INPUT_DIR.glob("*.kml"))
+
+    if not kml_files:
+        logger.info("No KML files found in input directory")
+        return kml_aois
+
+    logger.info(f"Found {len(kml_files)} KML file(s) in input directory")
+
+    for kml_file in kml_files:
+        try:
+            # Read KML file
+            gdf = gpd.read_file(kml_file, driver='KML')
+
+            if len(gdf) == 0:
+                logger.warning(f"Empty KML file: {kml_file.name}")
+                continue
+
+            # Process each placemark in the KML file
+            # Only include Polygons and MultiPolygons (skip Points, Lines, etc.)
+            for idx, row in gdf.iterrows():
+                geom = row.geometry
+                geom_type = geom.geom_type
+
+                # Skip non-polygon geometries (Points, LineStrings, etc.)
+                if geom_type not in ['Polygon', 'MultiPolygon']:
+                    logger.debug(f"  Skipping {geom_type} geometry: {row.get('Name', 'Unnamed')}")
+                    continue
+
+                # Extract name from placemark or use filename
+                if 'Name' in row and pd.notna(row['Name']):
+                    name = row['Name']
+                else:
+                    name = f"{kml_file.stem}_{idx}"
+
+                kml_aois.append({
+                    'name': name,
+                    'source_type': 'KML',
+                    'source_path': str(kml_file),
+                    'geometry': geom
+                })
+
+                logger.info(f"  Loaded KML: {name} ({geom_type})")
+
+        except Exception as e:
+            logger.warning(f"Failed to read KML file {kml_file.name}: {e}")
+            continue
+
+    return kml_aois
 
 
-def display_aois(aois: gpd.GeoDataFrame):
+def load_api_collections() -> List[Dict]:
+    """
+    Load collections from Vexcel API using VexcelClient.
+
+    Queries Graysky layers for Australia/New Zealand:
+    - graysky, graysky-suncorp (post-event damage assessment)
+
+    Returns:
+        List of dicts with keys: 'collection_id', 'name', 'source_type', 'layer', 'geometry'
+    """
+    if not VEXCEL_API_AVAILABLE:
+        logger.info("Vexcel API not available (VexcelClient not imported)")
+        return []
+
+    if not VDP_USERNAME or not VDP_PASSWORD:
+        logger.info("VDP credentials not set. Skipping API collections.")
+        return []
+
+    # Australia/New Zealand bounding box WKT (extended to include NZ)
+    australia_nz_wkt = (
+        "POLYGON ((103.886629 -49.037847, 183.691316 -49.037847, "
+        "183.691316 -5.440991, 103.886629 -5.440991, 103.886629 -49.037847))"
+    )
+
+    # Layers to query - ONLY Graysky layers (post-event damage assessment)
+    layers_to_query = [
+        "graysky",
+        "graysky-suncorp"
+    ]
+
+    try:
+        # Initialize and authenticate client
+        client = VexcelClient()
+        client.authenticate()
+        logger.info("✓ Vexcel API authenticated successfully")
+
+        api_aois = []
+        seen_collections = set()  # Deduplicate by collection name
+
+        # Query each layer
+        for layer in layers_to_query:
+            try:
+                logger.debug(f"Querying layer: {layer}")
+                geojson_response = client.get_collections(
+                    wkt=australia_nz_wkt,
+                    layer=layer,
+                    max_records=10000
+                )
+
+                features = geojson_response.get('features', [])
+                logger.info(f"  Found {len(features)} collections in layer '{layer}'")
+
+                # Process features
+                for feature in features:
+                    props = feature.get('properties', {})
+                    collection_name = props.get('collection', '')
+
+                    # Deduplicate
+                    if not collection_name or collection_name in seen_collections:
+                        continue
+
+                    seen_collections.add(collection_name)
+
+                    # Extract geometry
+                    from shapely.geometry import shape as shapely_shape
+                    geometry = None
+                    if 'geometry' in feature and feature['geometry']:
+                        geometry = shapely_shape(feature['geometry'])
+
+                    api_aois.append({
+                        'collection_id': collection_name,
+                        'name': props.get('pretty-name', collection_name),
+                        'source_type': 'API',
+                        'layer': props.get('layer', layer),
+                        'source_path': None,
+                        'geometry': geometry  # Pre-loaded geometry
+                    })
+
+            except Exception as e:
+                logger.warning(f"Failed to query layer {layer}: {e}")
+                continue
+
+        logger.info(f"Loaded {len(api_aois)} unique collections from Vexcel API")
+        return api_aois
+
+    except Exception as e:
+        logger.error(f"Failed to load collections from API: {e}")
+        return []
+
+
+def load_all_aois() -> List[Dict]:
+    """
+    Load all available AOIs from API and KML files.
+
+    Returns:
+        Numbered list of AOIs with metadata
+    """
+    logger.info("Loading AOIs from all sources...")
+
+    all_aois = []
+
+    # Load from API
+    api_aois = load_api_collections()
+    all_aois.extend(api_aois)
+
+    # Load from KML files
+    kml_aois = load_kml_aois()
+    all_aois.extend(kml_aois)
+
+    if not all_aois:
+        logger.error("No AOIs found! Please either:")
+        logger.error("  1. Set VEXCEL_API_KEY to fetch collections from API, or")
+        logger.error("  2. Place KML files in the input directory")
+        sys.exit(1)
+
+    logger.info(f"Total AOIs available: {len(all_aois)}")
+    return all_aois
+
+
+def display_aois(aois: List[Dict]):
     """Display available AOIs in a numbered list."""
     print("\n" + "="*80)
-    print("AVAILABLE GRAYSKY-SUNCORP AOIs (sorted by last capture date)")
+    print("AVAILABLE AOIs")
     print("="*80)
-    print(f"{'#':<4} {'Collection':<20} {'Area (km²)':<12} {'Last Capture'}")
+    print(f"{'#':<4} {'Name':<40} {'Source'}")
     print("-"*80)
 
-    for idx, row in aois.iterrows():
-        aoi_num = idx + 1
-        collection = row['collection'][:18]  # Use collection name
-        area = row['area_km2']
-        last_capture = pd.to_datetime(row['last_capture_date']).strftime('%Y-%m-%d') if pd.notna(row['last_capture_date']) else 'N/A'
+    for idx, aoi in enumerate(aois, 1):
+        name = aoi['name'][:38]  # Truncate long names
+        source = aoi['source_type']
 
-        print(f"{aoi_num:<4} {collection:<20} {area:>10.1f}  {last_capture}")
+        # Add collection ID for API sources
+        if source == 'API' and 'collection_id' in aoi:
+            display_name = f"{name} ({aoi['collection_id']})"[:38]
+        else:
+            display_name = name
+
+        print(f"{idx:<4} {display_name:<40} [{source}]")
 
     print("="*80 + "\n")
 
 
-def select_aoi_interactive(aois: gpd.GeoDataFrame) -> int:
+def select_aoi_interactive(aois: List[Dict]) -> int:
     """Prompt user to select an AOI."""
     display_aois(aois)
 
@@ -176,15 +374,53 @@ def select_aoi_interactive(aois: gpd.GeoDataFrame) -> int:
             sys.exit(0)
 
 
-def get_aoi_metadata(aoi_row) -> Dict:
-    """Extract metadata from AOI row."""
+def get_aoi_geometry(aoi: Dict) -> gpd.GeoDataFrame:
+    """
+    Get geometry for selected AOI.
+
+    Geometry is already pre-loaded for both API and KML sources.
+
+    Returns:
+        GeoDataFrame with AOI geometry
+    """
+    if 'geometry' not in aoi or aoi['geometry'] is None:
+        logger.error(f"No geometry found for AOI: {aoi['name']}")
+        sys.exit(1)
+
+    # Create GeoDataFrame from pre-loaded geometry
+    gdf = gpd.GeoDataFrame(
+        [{'name': aoi['name'], 'collection_id': aoi.get('collection_id', aoi['name'])}],
+        geometry=[aoi['geometry']],
+        crs='EPSG:4326'
+    )
+
+    return gdf
+
+
+def get_aoi_metadata(aoi: Dict, geometry) -> Dict:
+    """
+    Extract metadata from AOI.
+
+    Args:
+        aoi: AOI dict from load_all_aois()
+        geometry: Shapely geometry
+
+    Returns:
+        Dict with metadata
+    """
+    # Calculate area
+    # Convert to local projection for accurate area calculation
+    gdf_temp = gpd.GeoDataFrame([{}], geometry=[geometry], crs='EPSG:4326')
+    gdf_utm = gdf_temp.to_crs('+proj=utm +zone=55 +south +datum=WGS84')  # Rough UTM for AU
+    area_km2 = gdf_utm.geometry.area.iloc[0] / 1_000_000
+
     return {
-        'event_id': aoi_row['event_id'],
-        'event_name': aoi_row['event_name'],
-        'collection': aoi_row['collection'],
-        'layer': aoi_row['layer'],
-        'avg_gsd': aoi_row['avg_gsd'],
-        'area_km2': aoi_row['area_km2']
+        'event_id': aoi.get('collection_id', aoi['name']),
+        'event_name': aoi['name'],
+        'collection': aoi.get('collection_id', aoi['name']),
+        'layer': 'pre_event_structures',
+        'avg_gsd': 0.0,  # Not available from API/KML
+        'area_km2': area_km2
     }
 
 
@@ -393,6 +629,11 @@ def join_structure_property(structures: gpd.GeoDataFrame,
         pct = skipped/before_count*100
         logger.warning(f"Skipped {skipped:,} structures without property matches ({pct:.1f}%)")
 
+    # Early exit if no structures remain
+    if len(merged) == 0:
+        logger.warning("No structures remaining after property join")
+        return merged
+
     # Deduplicate structures that span multiple parcels (MFDs) if enabled
     if ENABLE_MFD_DEDUPLICATION:
         logger.info("Removing duplicate structures (MFDs spanning multiple parcels)...")
@@ -533,13 +774,13 @@ def transform_to_preevent_schema(
 
     if len(solar_panels) > 0:
         try:
-            solar_union = solar_panels.geometry.unary_union
+            solar_union = solar_panels.geometry.union_all()
         except Exception as e:
             logger.warning(f"Failed to create solar union: {e}")
 
     if len(water_heaters) > 0:
         try:
-            water_union = water_heaters.geometry.unary_union
+            water_union = water_heaters.geometry.union_all()
         except Exception as e:
             logger.warning(f"Failed to create water heater union: {e}")
 
@@ -813,8 +1054,8 @@ def main():
         logging.getLogger().setLevel(logging.DEBUG)
 
     try:
-        # Load AOIs
-        aois = load_aois()
+        # Load AOIs from all sources (API + KML)
+        aois = load_all_aois()
 
         # Select AOI
         if args.aoi_index:
@@ -825,10 +1066,15 @@ def main():
         else:
             aoi_index = select_aoi_interactive(aois)
 
-        # Get AOI
-        aoi_row = aois.iloc[aoi_index]
-        aoi_geometry = aoi_row.geometry
-        aoi_metadata = get_aoi_metadata(aoi_row)
+        # Get selected AOI
+        selected_aoi = aois[aoi_index]
+
+        # Get geometry (fetch from API or use pre-loaded from KML)
+        aoi_gdf = get_aoi_geometry(selected_aoi)
+        aoi_geometry = aoi_gdf.geometry.iloc[0]
+
+        # Get metadata
+        aoi_metadata = get_aoi_metadata(selected_aoi, aoi_geometry)
         aoi_bounds = aoi_geometry.bounds
 
         print(f"\nSelected: {aoi_metadata['event_name']}")

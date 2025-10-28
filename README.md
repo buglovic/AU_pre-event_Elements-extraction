@@ -1,7 +1,7 @@
 # Pre-Event Data Extraction Workflow
 
 ## Overview
-This workflow extracts Arturo building structure AND property data for specific Graysky-Suncorp event AOIs and prepares pre-event building inventories for damage assessment.
+This workflow extracts Arturo building structure AND property data for Areas of Interest (AOIs) and prepares pre-event building inventories for damage assessment. AOIs can be sourced dynamically from the Vexcel Collections API or from local KML files.
 
 **Key Features:**
 - **Property Integration:** True PARCELWKT from property boundaries (not building footprints)
@@ -21,8 +21,9 @@ pre_event_data/
 │   ├── README.md                  # Data download instructions
 │   ├── .gitignore                 # Excludes .gpkg files from git
 │   └── arturo_*_full.gpkg         # State-level data files (not in repo)
-├── input/                         # Input AOI definitions
-│   └── graysky_suncorp_aois.gpkg  # 56 event AOIs
+├── input/                         # Input AOI definitions (KML files)
+│   ├── .gitignore                 # Allows *.kml files
+│   └── *.kml                      # Optional: Place custom KML AOI files here
 ├── output/                        # Generated pre-event inventories
 │   └── {collection}_DA_pre-event.gpkg
 ├── scripts/                       # Main extraction scripts
@@ -62,7 +63,26 @@ cp config.example.py config.py
 # Default is ../data which should work out of the box
 ```
 
-**Step 3: Verify configuration**
+**Step 3: Configure AOI Sources (Optional)**
+
+The script supports two AOI sources:
+
+1. **Vexcel Collections API** (recommended for accessing Vexcel/Graysky collections)
+   ```bash
+   # Set your Vexcel Data Platform credentials
+   export VDP_USERNAME=your_username
+   export VDP_PASSWORD=your_password
+   ```
+
+2. **Local KML Files** (for custom AOIs)
+   ```bash
+   # Place KML files in the input directory
+   cp your_aoi.kml ../input/
+   ```
+
+**Note:** At least one source must be available. The script will show all API collections and local KML files in a unified list for selection.
+
+**Step 4: Verify configuration**
 
 ```bash
 python config.py
@@ -89,9 +109,14 @@ python extract_pre_event_data.py --aoi-index 8 --verbose
 ## Workflow Steps
 
 ### 1. AOI Selection
-- **Interactive:** Display list of 56 Graysky AOIs, user selects by number
-- **Direct:** Specify `--aoi-index` parameter (1-56)
-- AOIs sorted by capture date (newest = highest number)
+The script loads AOIs from two sources:
+- **Vexcel Collections API:** Dynamic collection list (requires VDP_USERNAME/VDP_PASSWORD)
+- **Local KML Files:** Custom AOIs from the `input/` directory
+
+Selection modes:
+- **Interactive:** Display unified list of all available AOIs, user selects by number
+- **Direct:** Specify `--aoi-index` parameter (1-N)
+- Collections and KML files are presented in a numbered list [1-N]
 
 ### 2. State Detection (Geographic)
 - Intersect AOI with Australian state boundaries
@@ -281,17 +306,18 @@ pre_event_data/
 ├── README.md                              # This file
 ├── scripts/
 │   ├── extract_pre_event_data.py          # Main extraction script
-│   ├── fetch_graysky_aois.py              # AOI fetching script
-│   └── test_footprint_regularization.py   # Regularization testing tool
+│   ├── config.py                          # Local configuration (not in repo)
+│   ├── config.example.py                  # Configuration template
+│   └── test_footprint_regularization.py   # Regularization testing tool (if present)
 ├── input/
-│   ├── graysky_suncorp_aois.gpkg          # 56 Graysky AOIs
-│   ├── graysky_suncorp_aois.json          # Raw GeoJSON
-│   └── *.json                             # Individual AOI metadata
+│   ├── .gitignore                         # Allows *.kml files
+│   └── *.kml                              # Optional: Custom AOI files
 ├── output/                                # Generated outputs
-│   ├── graydata-554_DA_pre-event.gpkg     # Example output
-│   ├── graydata-554_DA_pre-event.json     # Metadata JSON
+│   ├── {collection}_DA_pre-event.gpkg     # Example output
+│   ├── {collection}_DA_pre-event.json     # Metadata JSON
 │   └── ... (one pair per extraction)
-└── logs/                                  # Processing logs (optional)
+└── data/                                  # Arturo data (not in repo)
+    └── arturo_*_full.gpkg                 # Downloaded from AWS
 ```
 
 ---
@@ -300,11 +326,22 @@ pre_event_data/
 
 ### Input Data
 
-**Graysky-Suncorp AOIs:**
-- Location: `input/graysky_suncorp_aois.gpkg`
-- Count: 56 events
-- Coverage: Australia and New Zealand
-- Sorted by: Last capture date (newest = highest number)
+**AOIs (Areas of Interest):**
+
+Two sources are supported:
+
+1. **Vexcel Collections API** (dynamic, requires credentials)
+   - Real-time access to Graysky post-event collections
+   - Configuration: Set `VDP_USERNAME` and `VDP_PASSWORD` environment variables
+   - Fetches collection name, ID, and geometry
+   - Queries Graysky layers: graysky, graysky-suncorp
+   - Coverage: Australia and New Zealand
+
+2. **Local KML Files** (optional, for custom AOIs)
+   - Location: `input/*.kml`
+   - Place custom AOI KML files in the input directory
+   - Geometry loaded from KML on startup
+   - Useful for testing or custom regions
 
 **Arturo Structure Details:**
 - Location: `data/arturo_structuredetails_{STATE}_full.gpkg` (download from AWS S3)
@@ -413,30 +450,36 @@ See [Quick Start](#quick-start) section for detailed setup instructions.
 
 ---
 
-## Available Graysky AOIs
+## AOI Sources
 
-56 AOIs covering Australia and New Zealand, sorted by last capture date:
+### Vexcel Collections API
 
-### Major Events
-1. **Alfred Cyclone (QLD)** - 1,175 km² - graydata-735
-2. **NSW Floods** - 1,140 km² - Multiple AOIs
-3. **NZ Gabrielle Cyclone** - 1,030 km² - graydata-737
-4. **AU Christmas Storms** - 399 km² - graydata-554
-5. **South Australia Floods** - 341 km² - graydata-654
-6. **Tropical Cyclone Jasper** - 246 km² - graydata-748
+When `VDP_USERNAME` and `VDP_PASSWORD` are configured, the script dynamically fetches available collections from the Vexcel Data Platform API v2. This includes:
+- **Graysky layers**: graysky, graysky-suncorp (post-event damage assessment)
+- Real-time availability (no static list needed)
+- Collection metadata and geometries
+- Coverage: Australia and New Zealand
 
-### Hail Events
-- Canberra ACT Hail - 110 km²
-- Coffsharbour NSW Hail - 82 km²
-- Dubbo Hail - 54 km²
-- Multiple NSW coastal hail events
+**Advantages:**
+- Always up-to-date with latest event collections
+- No local storage of collection metadata
+- Access to all Graysky post-event damage assessment collections
+- Automatic deduplication across layers
 
-### Other Events
-- Bushfires (Cobargo, Mogo, Tara)
-- Floods (Ingham Cardwell, VIC Central)
-- Storm events
+### Local KML Files
 
-Run `python extract_pre_event_data.py` to see the complete list with indices.
+Custom AOI files can be placed in the `input/` directory for:
+- Testing with specific regions
+- Custom event boundaries
+- Offline usage (when API is unavailable)
+
+**Format Requirements:**
+- File extension: `.kml`
+- Must contain valid geometry (Polygon or MultiPolygon)
+- Optional: Include a `<name>` tag for display
+
+**Usage:**
+Run `python extract_pre_event_data.py` to see the complete list of available AOIs from both sources.
 
 ---
 
@@ -606,7 +649,7 @@ Detailed documentation available:
 - ✨ Added metadata JSON: `{collection}_DA_pre-event.json`
 
 **Last Updated:** 2025-10-28
-**Version:** 2.0
+**Version:** 2.2
 **Author:** Roman Buegler
 
 ---
@@ -638,6 +681,43 @@ For issues or questions:
 ---
 
 ## Changelog
+
+### Version 2.2 (2025-10-28) - Dynamic AOI Sources with VexcelClient
+- **Major:** Dual AOI source system using VexcelClient
+  - **Vexcel Collections API:** Real-time collection fetching (requires VDP_USERNAME/VDP_PASSWORD)
+  - **Local KML Files:** Custom AOIs from input/ directory
+  - Unified selection interface (API collections + KML files)
+  - Pre-loads geometry for both API and KML sources
+- **Refactored:** Vexcel API integration
+  - Uses existing `VexcelClient` from vexcel_ortho_skill
+  - Queries Graysky layers only: graysky, graysky-suncorp
+  - Extended coverage: Australia AND New Zealand
+  - Automatic deduplication across layers
+  - Consistent authentication with other project scripts
+- **Changed:** AOI selection workflow
+  - Removed static `graysky_suncorp_aois.gpkg` file
+  - Replaced `load_aois()` with `load_all_aois()`
+  - Simplified `get_aoi_geometry()` (geometry pre-loaded)
+  - Updated `display_aois()` for unified list display
+- **Updated:** Configuration
+  - Changed from `VEXCEL_API_KEY` to `VDP_USERNAME`/`VDP_PASSWORD`
+  - Added `KML_INPUT_DIR` path configuration
+  - Removed `AOI_FILE` constant
+- **Improved:** Flexibility
+  - Works with or without VDP credentials (KML fallback)
+  - Supports custom/test AOIs via KML
+  - Always up-to-date with latest Graysky event collections
+  - Extended geographic coverage: Australia AND New Zealand
+- **Fixed:** KML geometry handling
+  - Only loads Polygon/MultiPolygon geometries from KML files
+  - Skips Point and LineString geometries
+  - Supports KML files with multiple placemarks
+- **Fixed:** MFD deduplication crash with empty DataFrames
+  - Added early exit check when no structures found
+- **Improved:** Clean console output
+  - Suppressed Building Regulariser IoU warnings
+  - Replaced deprecated `unary_union` with `union_all()` for Shapely
+  - No deprecation warnings in output
 
 ### Version 2.1 (2025-10-28) - GitHub Release Preparation
 - **Major:** Configurable data paths via `config.py`
